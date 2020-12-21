@@ -7,43 +7,52 @@
     <title>Create your burger</title>
   </head>
   <body>
-    <h1>Create Your Burger</h1>
-    <input id="burger-name" type="text" placeholder="Name your burger" name="" value="">
-    <h2>Ingredients</h2>
-    <div>Cheese
-      <input class="ingredient-checkbox" type="checkbox" name="" value="3">
-      <label for="">add</label>
+    <!-- contenitore del form -->
+    <div class="container">
+      <!-- titolo -->
+      <h1 class="paddinglr-30">Create Your Burger</h1>
+      <!-- parte centrale -->
+      <main class="paddinglr-30">
+        <input id="burger-name" class="paddingtb-30" type="text" placeholder="Name Your Burger" name="" value="">
+        <h2>Ingredients</h2>
+        <div>Cheese
+          <input class="ingredient-checkbox" type="checkbox" name="" value="3">
+          <label for="">add</label>
+        </div>
+        <div>Egg
+          <input class="ingredient-checkbox" type="checkbox" name="" value="4">
+          <label for="">add</label>
+        </div>
+        <div>Mustard
+          <input class="ingredient-checkbox" type="checkbox" name="" value="3">
+          <label for="">add</label>
+        </div>
+        <div>Tomato
+          <input class="ingredient-checkbox" type="checkbox" name="" value="2">
+          <label for="">add</label>
+        </div>
+        <div>Lettuce
+          <input class="ingredient-checkbox" type="checkbox" name="" value="2">
+          <label for="">add</label>
+        </div>
+        <div>Ketchup
+          <input class="ingredient-checkbox" type="checkbox" name="" value="3">
+          <label for="">add</label>
+        </div>
+        <div class="coupon">
+          Discount Coupon
+          <input id="coupon-inserito" type="text" placeholder="coupon2020" name="" value="">
+        </div>
+        <div class="button-container">
+          <button id="button-calculate" type="button" name="button">calculate</button>
+        </div>
+      </main>
+      <!-- parte finale con prezzo -->
+      <div class="price paddinglr-30 paddingtb-30">
+        <span>Your price</span>
+        <span id="total-price"></span>
+      </div>
     </div>
-    <div>Egg
-      <input class="ingredient-checkbox" type="checkbox" name="" value="4">
-      <label for="">add</label>
-    </div>
-    <div>Mustard
-      <input class="ingredient-checkbox" type="checkbox" name="" value="3">
-      <label for="">add</label>
-    </div>
-    <div>Tomato
-      <input class="ingredient-checkbox" type="checkbox" name="" value="2">
-      <label for="">add</label>
-    </div>
-    <div>Lettuce
-      <input class="ingredient-checkbox" type="checkbox" name="" value="2">
-      <label for="">add</label>
-    </div>
-    <div>Ketchup
-      <input class="ingredient-checkbox" type="checkbox" name="" value="3">
-      <label for="">add</label>
-    </div>
-    <div>
-      Discount Coupon
-      <input id="coupon-inserito" type="text" placeholder="coupon2020" name="" value="">
-    </div>
-    <button id="button-calculate" type="button" name="button">Calculate</button>
-    <div>
-      Your price
-      <span id="total-price"></span>
-    </div>
-
 
 
 
