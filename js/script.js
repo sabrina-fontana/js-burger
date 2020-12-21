@@ -17,25 +17,26 @@ button.addEventListener('click', function() {
   // controllo che l'utente dia nome al suo hamburger
   if (burgerName.value === '') {
     alert('Devi dare un nome al tuo hamburger');
-  }
-  // // il prezzo totale iniziale si ripristina a 10 ogni volta che l'utente clicca il button
-  total = 10;
-  // aumento di 1 il counterIngredients ogni volta che l'utente checka un ingrediente
-  for (var i = 0; i < ingredientsCheckboxes.length; i++) {
-    if (ingredientsCheckboxes[i].checked) {
-      counterIngredients += 1;
-      total += parseInt(ingredientsCheckboxes[i].value);
+  } else {
+    // // il prezzo totale iniziale si ripristina a 10 ogni volta che l'utente clicca il button
+    total = 10;
+    // aumento di 1 il counterIngredients ogni volta che l'utente checka un ingrediente
+    for (var i = 0; i < ingredientsCheckboxes.length; i++) {
+      if (ingredientsCheckboxes[i].checked) {
+        counterIngredients += 1;
+        total += parseInt(ingredientsCheckboxes[i].value);
+      }
     }
-  }
-  // controllo che l'utente selezioni almeno 2 ingredienti
-  if (counterIngredients < 2) {
-    alert('Devi selezionare almeno 2 ingredienti');
-  }
-  // se il codice sconto inserito è valido -> sconto 20%
-  for (var i = 0; i < coupon.length; i++) {
-    if (couponInserito.value === coupon[i]) {
-      total = total * 0.8;
+    // controllo che l'utente selezioni almeno 2 ingredienti
+    if (counterIngredients < 2) {
+      alert('Devi selezionare almeno 2 ingredienti');
     }
+    // se il codice sconto inserito è valido -> sconto 20%
+    for (var i = 0; i < coupon.length; i++) {
+      if (couponInserito.value === coupon[i]) {
+        total = total * 0.8;
+      }
+    }
+    totalPriceHTML.innerHTML = '€ ' + total.toFixed(2);
   }
-  totalPriceHTML.innerHTML = '€ ' + total.toFixed(2);
 });
