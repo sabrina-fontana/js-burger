@@ -93,10 +93,6 @@ label {
   cursor: pointer;
   display: block;
   position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .checkbox-name {
@@ -124,6 +120,7 @@ label .add {
   height: 15px;
   width: 15px;
   background-color: #d33359;
+  border-radius: 3px;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
