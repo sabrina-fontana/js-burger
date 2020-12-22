@@ -1,5 +1,6 @@
 // input nome hamburger
 var burgerName = document.getElementById('burger-name');
+var burgerError = document.getElementsByClassName('burger-name-error')[0];
 // checkbox ingredienti
 var ingredientsCheckboxes = document.getElementsByClassName('ingredient-checkbox');
 // codici sconto
@@ -14,12 +15,15 @@ var totalPriceHTML = document.getElementById('total-price');
 totalPriceHTML.innerHTML = '€ ' + (10).toFixed(2);
 // ! AL CLICK SU BUTTON
 button.addEventListener('click', function() {
-  // controllo che l'utente dia nome al suo hamburger
+  // // il prezzo totale iniziale e il counter ingredienti si ripristinano ogni volta che l'utente clicca il button
+  total = 10;
+  counterIngredients = 0;
+  // controllo che l'utente dia u nome al suo hamburger
   if (burgerName.value === '') {
-    alert('Devi dare un nome al tuo hamburger');
+    burgerError.innerHTML = '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Devi dare un nome al tuo hamburger';
+    totalPriceHTML.innerHTML = '€ ' + (10).toFixed(2);
   } else {
-    // // il prezzo totale iniziale si ripristina a 10 ogni volta che l'utente clicca il button
-    total = 10;
+    burgerError.style.display = 'none';
     // aumento di 1 il counterIngredients ogni volta che l'utente checka un ingrediente
     for (var i = 0; i < ingredientsCheckboxes.length; i++) {
       if (ingredientsCheckboxes[i].checked) {
@@ -30,13 +34,16 @@ button.addEventListener('click', function() {
     // controllo che l'utente selezioni almeno 2 ingredienti
     if (counterIngredients < 2) {
       alert('Devi selezionare almeno 2 ingredienti');
-    }
-    // se il codice sconto inserito è valido -> sconto 20%
-    for (var i = 0; i < coupon.length; i++) {
-      if (couponInserito.value === coupon[i]) {
-        total = total * 0.8;
+      totalPriceHTML.innerHTML = '€ ' + (10).toFixed(2);
+    } else {
+      // se il codice sconto inserito è valido -> sconto 20%
+      for (var i = 0; i < coupon.length; i++) {
+        if (couponInserito.value === coupon[i]) {
+          total = total * 0.8;
+        }
+        // else if (couponInserito.value.length > 1 && coupon.indexOf(couponInserito.value) === -1)
       }
+      totalPriceHTML.innerHTML = '€ ' + total.toFixed(2);
     }
-    totalPriceHTML.innerHTML = '€ ' + total.toFixed(2);
   }
 });

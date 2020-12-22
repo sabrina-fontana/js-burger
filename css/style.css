@@ -11,12 +11,13 @@ body {
 
 .container {
   width: 800px;
+  margin: 0 auto;
   background-color: white;
 }
 
-.paddinglr-30 {
-  padding-left: 30px;
-  padding-right: 30px;
+.paddinglr-40 {
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .paddingtb-30 {
@@ -26,21 +27,27 @@ body {
 
 /* TITOLO */
 h1 {
+  height: 15vh;
   background-color: #fdbb40;
   padding-top: 50px;
-  padding-bottom: 20px;
   font-weight: 900;
 }
 
 /* PARTE CENTRALE */
 main {
-  height: 450px;
+  height: 73vh;
 }
 
 #burger-name {
   font-size: 24px;
   border: none;
   outline: none;
+}
+
+.burger-name-error {
+  color: #d33359;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 h2 {
@@ -62,10 +69,11 @@ h2 {
 
 label {
   color: #d33359;
+  cursor: pointer;
 }
 
 .ingredient-checkbox {
-  background-color: #d33359;
+  cursor: pointer;
 }
 
 .coupon {
@@ -80,6 +88,7 @@ label {
   outline: none;
   border-radius: 5px;
   padding: 5px;
+  margin-left: 5px;
   width: 500px;
   font-size: 12px;
 }
@@ -95,10 +104,12 @@ label {
   padding: 10px;
   font-size: 18px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 /* PREZZO */
 .price {
+  height: 12vh;
   background-color: #d33359;
   color: white;
   font-weight: bold;
