@@ -17,61 +17,68 @@
       </div>
       <!-- parte centrale -->
       <main class="paddinglr-40">
+
         <div>
           <input id="burger-name" type="text" placeholder="Name Your Burger..." name="" value="">
-          <span class="burger-name-error"></span>
+          <span id="burger-error"></span>
         </div>
-        <h2>Ingredients</h2><span class="ingredients-error"></span>
+
+        <h2>Ingredients</h2>
+        <span id="ingredients-error"></span>
+        <!-- checkbox ingredienti -->
         <div class="ingredients-list">
-          <div>
-            <label for="cheese">
-              <img class="ingredient-img" src="img/cheese.svg" alt="">
-              <span>Cheese</span>
-            </label>
+
+          <label for="cheese">
+            <img class="ingredient-img" src="img/cheese.svg" alt="">
+            <span class="checkbox-name">Cheese</span>
             <input id="cheese" class="ingredient-checkbox" type="checkbox" name="" value="3">
-            <label for="cheese">add</label>
-          </div>
-          <div>
-            <label for="egg">
-              <img class="ingredient-img" src="img/fried-egg.svg" alt="">
-              <span>Egg</span>
-            </label>
+            <span class="checkmark"></span>
+            <span class="add">add</span>
+          </label>
+
+          <label for="egg">
+            <img class="ingredient-img" src="img/fried-egg.svg" alt="">
+            <span class="checkbox-name">Egg</span>
             <input id="egg" class="ingredient-checkbox" type="checkbox" name="" value="4">
-            <label for="egg">add</label>
-          </div>
-          <div>
-            <label for="mustard">
-              <img class="ingredient-img" src="img/mustard.svg" alt="">
-              <span>Mustard</span>
-            </label>
+            <span class="checkmark"></span>
+            <span class="add">add</span>
+          </label>
+
+          <label for="mustard">
+            <img class="ingredient-img" src="img/mustard.svg" alt="">
+            <span class="checkbox-name">Mustard</span>
             <input id="mustard" class="ingredient-checkbox" type="checkbox" name="" value="3">
-            <label for="mustard">add</label>
-          </div>
-          <div>
-            <label for="tomato">
-              <img class="ingredient-img" src="img/tomato.svg" alt="">
-              <span>Tomato</span>
-            </label>
+            <span class="checkmark"></span>
+            <span class="add">add</span>
+          </label>
+
+          <label for="tomato">
+            <img class="ingredient-img" src="img/tomato.svg" alt="">
+            <span class="checkbox-name">Tomato</span>
             <input id="tomato" class="ingredient-checkbox" type="checkbox" name="" value="2">
-            <label for="tomato">add</label>
-          </div>
-          <div>
-            <label for="lettuce">
-              <img class="ingredient-img" src="img/lettuce.svg" alt="">
-              <span>Lettuce</span>
-            </label>
+            <span class="checkmark"></span>
+            <span class="add">add</span>
+          </label>
+
+          <label for="lettuce">
+            <img class="ingredient-img" src="img/lettuce.svg" alt="">
+            <span class="checkbox-name">Lettuce</span>
             <input id="lettuce" class="ingredient-checkbox" type="checkbox" name="" value="2">
-            <label for="lettuce">add</label>
-          </div>
-          <div>
-            <label for="ketchup">
-              <img class="ingredient-img" src="img/ketchup.svg" alt="">
-              <span>Ketchup</span>
-            </label>
-            <input id="ketcuhp" class="ingredient-checkbox" type="checkbox" name="" value="3">
-            <label for="ketchup">add</label>
-          </div>
+            <span class="checkmark"></span>
+            <span class="add">add</span>
+          </label>
+
+          <label for="ketchup">
+            <img class="ingredient-img" src="img/ketchup.svg" alt="">
+            <span class="checkbox-name">Ketchup</span>
+            <input id="ketchup" class="ingredient-checkbox" type="checkbox" name="" value="3">
+            <span class="checkmark"></span>
+            <span class="add">add</span>
+
+          </label>
+
         </div>
+
         <div class="coupon">
           Discount Coupon
           <input id="coupon-inserito" type="text" placeholder="coupon2020" name="" value="">

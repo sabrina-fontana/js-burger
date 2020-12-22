@@ -11,6 +11,7 @@ body {
 
 .container {
   width: 800px;
+  height: 100vh;
   margin: 0 auto;
   background-color: white;
 }
@@ -27,7 +28,7 @@ body {
 
 /* TITOLO */
 .title {
-  height: 15vh;
+  height: 15%;
   background-color: #fdbb40;
   padding-top: 50px;
   font-weight: 900;
@@ -43,7 +44,7 @@ body {
 
 /* PARTE CENTRALE */
 main {
-  height: 73vh;
+  height: 75%;
 }
 
 #burger-name {
@@ -57,11 +58,16 @@ main {
   outline: none;
 }
 
-.burger-name-error, .ingredients-error {
-  color: #d33359;
+.burger-error-css, .ingredients-error-css {
+  color: white;
+  background: #d33359;
+  border-radius: 5px;
+  padding: 5px;
   font-weight: bold;
   font-size: 18px;
   margin-left: 10px;
+  /* positioned elements will display on top of unpositioned elements */
+  position: relative;
 }
 
 h2 {
@@ -74,7 +80,7 @@ h2 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 200px;
+  height: 40%;
 }
 
 .ingredients-list > * {
@@ -85,11 +91,64 @@ h2 {
 label {
   color: #d33359;
   cursor: pointer;
+  display: block;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-label > span {
+.checkbox-name {
   color: black;
-  margin: 0 10px;
+}
+
+label input {
+  position: relative;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+label .add {
+  position: absolute;
+  left: 180px;
+  top: 22px;
+}
+
+.checkmark {
+  position: absolute;
+  left: 150px;
+  top: 25px;
+  height: 15px;
+  width: 15px;
+  background-color: #d33359;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 3px;
+  top: 0px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .ingredient-img {
@@ -100,6 +159,7 @@ label > span {
 
 .ingredient-checkbox {
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .coupon {
@@ -135,7 +195,7 @@ label > span {
 
 /* PREZZO */
 .price {
-  height: 12vh;
+  height: 10%;
   background-color: #d33359;
   color: white;
   font-weight: bold;

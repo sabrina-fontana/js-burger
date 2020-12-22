@@ -1,9 +1,9 @@
 // input nome hamburger
 var burgerName = document.getElementById('burger-name');
-var burgerError = document.getElementsByClassName('burger-name-error')[0];
+var burgerError = document.getElementById('burger-error');
 // checkbox ingredienti
 var ingredientsCheckboxes = document.getElementsByClassName('ingredient-checkbox');
-var ingredientsError = document.getElementsByClassName('ingredients-error')[0];
+var ingredientsError = document.getElementById('ingredients-error');
 // codici sconto
 var coupon = ['coupon2020', 'sconto20', 'coupon20%'];
 var couponInserito = document.getElementById('coupon-inserito');
@@ -21,9 +21,11 @@ button.addEventListener('click', function() {
   counterIngredients = 0;
   // controllo che l'utente dia u nome al suo hamburger
   if (burgerName.value === '') {
+    burgerError.classList.add('burger-error-css');
     burgerError.innerHTML = '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Devi dare un nome al tuo hamburger';
     totalPriceHTML.innerHTML = '€ ' + (10).toFixed(2);
   } else {
+    burgerError.classList.remove('burger-error-css');
     burgerError.style.display = 'none';
     // aumento di 1 il counterIngredients ogni volta che l'utente checka un ingrediente
     for (var i = 0; i < ingredientsCheckboxes.length; i++) {
@@ -32,20 +34,22 @@ button.addEventListener('click', function() {
         total += parseInt(ingredientsCheckboxes[i].value);
       }
     }
-    // controllo che l'utente selezioni almeno 2 ingredienti
-    if (counterIngredients < 2) {
-      ingredientsError.innerHTML = '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Devi selezionare almeno 2 ingredienti';
-      totalPriceHTML.innerHTML = '€ ' + (10).toFixed(2);
-    } else {
-      ingredientsError.style.display = 'none';
-      // se il codice sconto inserito è valido -> sconto 20%
-      for (var i = 0; i < coupon.length; i++) {
-        if (couponInserito.value === coupon[i]) {
-          total = total * 0.8;
-        }
-        // else if (couponInserito.value.length > 1 && coupon.indexOf(couponInserito.value) === -1)
+  }
+  // controllo che l'utente selezioni almeno 2 ingredienti
+  if (counterIngredients < 2) {
+    ingredientsError.classList.add('ingredients-error-css');
+    ingredientsError.innerHTML = '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Devi selezionare almeno 2 ingredienti';
+    totalPriceHTML.innerHTML = '€ ' + (10).toFixed(2);
+  } else {
+    ingredientsError.classList.remove('ingredients-error-css');
+    ingredientsError.style.display = 'none';
+    // se il codice sconto inserito è valido -> sconto 20%
+    for (var i = 0; i < coupon.length; i++) {
+      if (couponInserito.value === coupon[i]) {
+        total = total * 0.8;
       }
-      totalPriceHTML.innerHTML = '€ ' + total.toFixed(2);
+      // else if (couponInserito.value.length > 1 && coupon.indexOf(couponInserito.value) === -1)
     }
   }
+  totalPriceHTML.innerHTML = '€ ' + total.toFixed(2);
 });
