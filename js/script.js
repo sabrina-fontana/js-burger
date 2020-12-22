@@ -23,6 +23,7 @@ button.addEventListener('click', function() {
   if (burgerName.value === '') {
     burgerError.classList.add('burger-error-css');
     burgerError.innerHTML = '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Devi dare un nome al tuo hamburger';
+    burgerError.style.display = 'inline-block';
     totalPriceHTML.innerHTML = '€ ' + (10).toFixed(2);
   } else {
     burgerError.classList.remove('burger-error-css');
@@ -38,6 +39,7 @@ button.addEventListener('click', function() {
     if (counterIngredients < 2) {
       ingredientsError.classList.add('ingredients-error-css');
       ingredientsError.innerHTML = '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Devi selezionare almeno 2 ingredienti';
+      ingredientsError.style.display = 'inline-block';
       totalPriceHTML.innerHTML = '€ ' + (10).toFixed(2);
     } else {
       ingredientsError.classList.remove('ingredients-error-css');
@@ -49,7 +51,7 @@ button.addEventListener('click', function() {
         }
         // else if (couponInserito.value.length > 1 && coupon.indexOf(couponInserito.value) === -1)
       }
+      totalPriceHTML.innerHTML = '€ ' + total.toFixed(2);
     }
-    totalPriceHTML.innerHTML = '€ ' + total.toFixed(2);
   }
 });
