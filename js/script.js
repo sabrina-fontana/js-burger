@@ -3,6 +3,7 @@ var burgerName = document.getElementById('burger-name');
 var burgerError = document.getElementsByClassName('burger-name-error')[0];
 // checkbox ingredienti
 var ingredientsCheckboxes = document.getElementsByClassName('ingredient-checkbox');
+var ingredientsError = document.getElementsByClassName('ingredients-error')[0];
 // codici sconto
 var coupon = ['coupon2020', 'sconto20', 'coupon20%'];
 var couponInserito = document.getElementById('coupon-inserito');
@@ -33,9 +34,10 @@ button.addEventListener('click', function() {
     }
     // controllo che l'utente selezioni almeno 2 ingredienti
     if (counterIngredients < 2) {
-      alert('Devi selezionare almeno 2 ingredienti');
+      ingredientsError.innerHTML = '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Devi selezionare almeno 2 ingredienti';
       totalPriceHTML.innerHTML = '€ ' + (10).toFixed(2);
     } else {
+      ingredientsError.style.display = 'none';
       // se il codice sconto inserito è valido -> sconto 20%
       for (var i = 0; i < coupon.length; i++) {
         if (couponInserito.value === coupon[i]) {

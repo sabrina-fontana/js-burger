@@ -26,11 +26,19 @@ body {
 }
 
 /* TITOLO */
-h1 {
+.title {
   height: 15vh;
   background-color: #fdbb40;
   padding-top: 50px;
   font-weight: 900;
+  position: relative;
+}
+
+.burger-img {
+  width: 200px;
+  position: absolute;
+  right: -40px;
+  top: -30px;
 }
 
 /* PARTE CENTRALE */
@@ -39,27 +47,34 @@ main {
 }
 
 #burger-name {
-  font-size: 24px;
+  width: 50%;
+  font-size: 22px;
+  background-color: #fff5e2;
+  margin: 30px 0;
+  padding: 5px;
   border: none;
+  border-radius: 10px;
   outline: none;
 }
 
-.burger-name-error {
+.burger-name-error, .ingredients-error {
   color: #d33359;
   font-weight: bold;
   font-size: 18px;
+  margin-left: 10px;
 }
 
 h2 {
   font-weight: 400;
   padding-bottom: 10px;
+  display: inline-block;
 }
 
 .ingredients-list {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 150px;
+  height: 200px;
 }
 
 .ingredients-list > * {
@@ -70,6 +85,17 @@ h2 {
 label {
   color: #d33359;
   cursor: pointer;
+}
+
+label > span {
+  color: black;
+  margin: 0 10px;
+}
+
+.ingredient-img {
+  width: 45px;
+  vertical-align: middle;
+  margin-right: 5px;
 }
 
 .ingredient-checkbox {
